@@ -24,13 +24,6 @@ define( 'SITE_FLIGHT_EXTENSION_PHP_MINIMUM', '7.4.0' );
 
 
 /**********************************
- * includes
- **********************************/
-// setup trailers custom post type
-// require_once( . '/includes/trailers/trailer-post-type.php');
-
-
-/**********************************
  * setup all styles and scripts
  **********************************/
 
