@@ -35,7 +35,7 @@ define( 'SITE_FLIGHT_EXTENSION_PHP_MINIMUM', '7.4.0' );
  **********************************/
 
 function sfext_scripts(){
-	wp_enqueue_script( 'sfext-nav-script', SITE_FLIGHT_EXTENSION_URL . 'assets/js/sfpe-nav-menu.js' , array( 'jquery' ), false, true );
+	wp_enqueue_script( 'sfext-nav-script', SITE_FLIGHT_EXTENSION_URL . 'assets/js/sfext-nav-scripts.js' , array(), false, true );
 }
 
 add_action('wp_enqueue_scripts', 'sfext_scripts');
