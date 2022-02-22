@@ -12,7 +12,6 @@ const sfextActive = "sfext-open"; // apply this class to show
 const sfextToggleMenu = document.querySelectorAll('.sfext-menu-item');
 
 sfextToggleMenu.forEach(function(item) {
-  console.log(item);
   item.addEventListener("click", () => {
     let controlId = item.id;
     let showId = controlId.replace('cntrl', 'show');
