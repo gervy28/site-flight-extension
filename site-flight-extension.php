@@ -2,7 +2,7 @@
 /**
 * Plugin Name: Site Flight Extensions
 * Description: Adds SiteFlight functionality typical for most SiteFlight websites
-* Version: 1.0.0
+* Version: 1.2.0
 * Author: SiteFlight
 * Author URI: https://www.siteflight.co/
 */
@@ -16,7 +16,7 @@ if ( ! defined('ABSPATH')) {
  * global variables
  **********************************/
 
-define( 'SITE_FLIGHT_EXTENSION_VERSION', '1.0.0' );
+define( 'SITE_FLIGHT_EXTENSION_VERSION', '1.2.0' );
 define( 'SITE_FLIGHT_EXTENSION', 'site-flight-extension' );
 define( 'SITE_FLIGHT_EXTENSION_PATH', plugin_dir_path( __FILE__ ) );
 define( 'SITE_FLIGHT_EXTENSION_URL', plugin_dir_url( __FILE__ ) );
