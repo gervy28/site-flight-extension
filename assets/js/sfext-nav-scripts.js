@@ -11,30 +11,39 @@
 const sfextDisplayOpen = "sfext-open"; // apply this class to show
 const sfextToggleDisplayBtns = document.querySelectorAll('.sfext-menu-item');
 
+
 sfextToggleDisplayBtns.forEach(function(item) {
   item.addEventListener("click", () => {
-    sfextMenuToggleControl(item);
-    // let controlId = item.id;
-    // let showId = controlId.replace('cntrl', 'show');
-    // // close the open instance
-    // document.getElementById(showId).classList.toggle(sfextDisplayOpen);
-    // item.classList.toggle(sfextDisplayOpen);
-  })
+    sfextMenuToggleControl(item)
+  });
 });
-
 
 function sfextMenuToggleControl(item) {
   let controlId = item.id;
   let showId = controlId.replace('cntrl', 'show');
-  // close the open instance
-  document.getElementById(showId).classList.tog
+  let showSection = document.getElementById(showId);
+  
+  if(item.classList.contains(sfextDisplayOpen)) {
+    showSection.classList.remove(sfextDisplayOpen);
+    item.classList.remove(sfextDisplayOpen);
+  } else {
+    sfextCloseOpenMenus();
+    showSection.classList.add(sfextDisplayOpen);
+    item.classList.add(sfextDisplayOpen);
+    focusWithin(showSection);
+  }
 }
 
-// http://jsfiddle.net/5mhqrhwk/3/
+function sfextCloseOpenMenus() {
+  let displaysOpen = document.querySelectorAll("." + sfextDisplayOpen);
+  if ( displaysOpen.length ) {
+      displaysOpen.forEach((element) => {element.classList.remove(sfextDisplayOpen)});
+  }
+}
 
-// if there is one open and a click on any other element besides the active open it must close
-// focus must be set to the first focusable element within the menu
-// if another menu option is closed we need to close the menu first
-// Ideally I'd bring this fully into a Javascript object to be called with sfextMegaMenu.funciton
-// Read some more code examples about making this an object
-
+function focusWithin(element) {
+  let focusableElements = element.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+  if ( focusableElements.length ) {
+    focusableElements[0].focus();
+  }
+}
