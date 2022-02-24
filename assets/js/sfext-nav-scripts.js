@@ -8,7 +8,7 @@
 * 
 */
 
-const sfextDisplayOpen = "sfext-open"; // apply this class to show
+const sfextDisplayOpen = "sfext-open";
 const sfextToggleDisplayBtns = document.querySelectorAll('.sfext-menu-item');
 
 
